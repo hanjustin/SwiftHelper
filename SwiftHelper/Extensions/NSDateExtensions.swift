@@ -8,44 +8,43 @@
 
 import Foundation
 
+// MARK: - Private
+
 extension NSDate {
     
     private var defaultCalendar: NSCalendar {
         return NSCalendar.currentCalendar()
     }
+}
+
+// MARK: - Public methods
+
+extension NSDate {
     
-    private var defaultTimeZone: NSTimeZone {
-        return NSTimeZone.localTimeZone()
-    }
-    
-    
-    public func midnight(timezone: NSTimeZone? = nil) -> NSDate {
+    public func midnight(timezone: NSTimeZone = .localTimeZone()) -> NSDate {
         let calendar = defaultCalendar
-        calendar.timeZone = timezone ?? defaultTimeZone
+        calendar.timeZone = timezone
         return calendar.startOfDayForDate(self)
     }
     
-    public func isToday(timezone: NSTimeZone? = nil) -> Bool {
+    public func isToday(timezone: NSTimeZone = .localTimeZone()) -> Bool {
         return self.midnight(timezone) == NSDate().midnight(timezone)
     }
     
-    public func yesterdayMidnight(timezone: NSTimeZone? = nil) -> NSDate {
+    public func yesterdayMidnight(timezone: NSTimeZone = .localTimeZone()) -> NSDate {
         return self.midnight(timezone).dateByAddingTimeInterval(-60 * 60 * 24)
     }
     
-    public func dateComponents(timezone: NSTimeZone? = nil) -> (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+    public func dateComponent(calendarUnit: NSCalendarUnit, timezone: NSTimeZone = .localTimeZone()) -> Int {
         let calendar = defaultCalendar
-        calendar.timeZone = timezone ?? defaultTimeZone
-        
-        let components = calendar.components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: self)
-        return (components.year, components.month, components.day, components.hour, components.minute, components.second)
+        calendar.timeZone = timezone
+        return calendar.component(calendarUnit, fromDate: self)
     }
     
-    public func numberOfdaysSince(date: NSDate, timezone: NSTimeZone? = nil) -> Int {
-        return self.dateComponents(timezone).day - date.dateComponents(timezone).day
+    public func numberOfdaysSince(date: NSDate, timezone: NSTimeZone = .localTimeZone()) -> Int {
+        return self.dateComponent(.Day, timezone: timezone) - date.dateComponent(.Day, timezone: timezone)
     }
 }
-
 
 
 extension NSDate: Comparable {}
@@ -57,3 +56,4 @@ public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
 public func <(lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs.compare(rhs) == .OrderedAscending
 }
+

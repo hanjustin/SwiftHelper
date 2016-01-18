@@ -18,7 +18,7 @@ public extension NSTimeZone {
     
     /*  Convenience init commented out due to a possible bug.
         There seems to be a bug with initializer extension for NSTimeZone
-        self.init() does not seem to initialize NSTimeZone correctly
+        self.init?(abbreviation: String) does not seem to initialize NSTimeZone correctly and return nil always
 
 
 

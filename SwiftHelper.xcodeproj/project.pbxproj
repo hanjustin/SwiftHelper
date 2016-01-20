@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */; };
+		D08084C71C4F6F1F00F010BA /* NumberTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */; };
 		D08B4A3A1C4CBD33007715AA /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B4A391C4CBD33007715AA /* OrderedDictionary.swift */; };
 		D0CFA3E61C47870F00237E09 /* IntExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFA3E31C47870F00237E09 /* IntExtentions.swift */; };
 		D0CFA3E71C47870F00237E09 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */; };
@@ -18,6 +19,7 @@
 		D02F4DC01C44D8D000D328F5 /* SwiftHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02F4DC51C44D8D000D328F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeZoneExtensions.swift; sourceTree = "<group>"; };
+		D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberTextFieldDelegate.swift; path = Delegates/UI/NumberTextFieldDelegate.swift; sourceTree = "<group>"; };
 		D08B4A391C4CBD33007715AA /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderedDictionary.swift; path = "Data Structures/OrderedDictionary.swift"; sourceTree = "<group>"; };
 		D0CFA3E31C47870F00237E09 /* IntExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtentions.swift; sourceTree = "<group>"; };
 		D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
@@ -54,11 +56,28 @@
 		D02F4DC21C44D8D000D328F5 /* SwiftHelper */ = {
 			isa = PBXGroup;
 			children = (
+				D08084C81C4F6F2500F010BA /* Delegates */,
 				D08B4A381C4CBD09007715AA /* Data Structures */,
 				D0CFA3E21C47870F00237E09 /* Extensions */,
 				D02F4DC51C44D8D000D328F5 /* Info.plist */,
 			);
 			path = SwiftHelper;
+			sourceTree = "<group>";
+		};
+		D08084C81C4F6F2500F010BA /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D08084C91C4F6F2D00F010BA /* UI */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		D08084C91C4F6F2D00F010BA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		D08B4A381C4CBD09007715AA /* Data Structures */ = {
@@ -160,6 +179,7 @@
 				D0CFA3E81C47870F00237E09 /* UIColorExtensions.swift in Sources */,
 				D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */,
 				D08B4A3A1C4CBD33007715AA /* OrderedDictionary.swift in Sources */,
+				D08084C71C4F6F1F00F010BA /* NumberTextFieldDelegate.swift in Sources */,
 				D0CFA3E71C47870F00237E09 /* NSDateExtensions.swift in Sources */,
 				D0CFA3E61C47870F00237E09 /* IntExtentions.swift in Sources */,
 			);

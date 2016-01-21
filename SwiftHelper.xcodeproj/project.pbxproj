@@ -10,6 +10,7 @@
 		D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */; };
 		D08084C71C4F6F1F00F010BA /* NumberTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */; };
 		D08B4A3A1C4CBD33007715AA /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B4A391C4CBD33007715AA /* OrderedDictionary.swift */; };
+		D0C34A491C50C0D5008F9F83 /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C34A481C50C0D5008F9F83 /* CommonFunctions.swift */; };
 		D0CFA3E61C47870F00237E09 /* IntExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFA3E31C47870F00237E09 /* IntExtentions.swift */; };
 		D0CFA3E71C47870F00237E09 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */; };
 		D0CFA3E81C47870F00237E09 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CFA3E51C47870F00237E09 /* UIColorExtensions.swift */; };
@@ -21,6 +22,7 @@
 		D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeZoneExtensions.swift; sourceTree = "<group>"; };
 		D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberTextFieldDelegate.swift; path = Delegates/UI/NumberTextFieldDelegate.swift; sourceTree = "<group>"; };
 		D08B4A391C4CBD33007715AA /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderedDictionary.swift; path = "Data Structures/OrderedDictionary.swift"; sourceTree = "<group>"; };
+		D0C34A481C50C0D5008F9F83 /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		D0CFA3E31C47870F00237E09 /* IntExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtentions.swift; sourceTree = "<group>"; };
 		D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		D0CFA3E51C47870F00237E09 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		D0CFA3E21C47870F00237E09 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D0C34A481C50C0D5008F9F83 /* CommonFunctions.swift */,
 				D0CFA3E31C47870F00237E09 /* IntExtentions.swift */,
 				D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */,
 				D0CFA3E51C47870F00237E09 /* UIColorExtensions.swift */,
@@ -178,6 +181,7 @@
 			files = (
 				D0CFA3E81C47870F00237E09 /* UIColorExtensions.swift in Sources */,
 				D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */,
+				D0C34A491C50C0D5008F9F83 /* CommonFunctions.swift in Sources */,
 				D08B4A3A1C4CBD33007715AA /* OrderedDictionary.swift in Sources */,
 				D08084C71C4F6F1F00F010BA /* NumberTextFieldDelegate.swift in Sources */,
 				D0CFA3E71C47870F00237E09 /* NSDateExtensions.swift in Sources */,

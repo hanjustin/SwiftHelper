@@ -24,3 +24,13 @@ print(orderedDictionary[key: 3]) // => nil
 ```
 
 Modification with index:
+
+```swift
+anotherDictionary[index: 1] = (3, "Tres")
+anotherDictionary[index: 2] = (6, "VI")
+
+print(anotherDictionary[index: 0]) // => (0, "Zero")
+print(anotherDictionary[index: 1]) // => (3, "Tres")
+print(anotherDictionary[index: 2]) // => (6, "VI")
+print(anotherDictionary[index: 3]) // => fatal error: Array index out of range
+```

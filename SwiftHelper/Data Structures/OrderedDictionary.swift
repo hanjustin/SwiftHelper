@@ -83,6 +83,7 @@ public struct OrderedDictionary<KeyType: Hashable, ValueType> {
         }
         
         set(newElement) {
+            removeAtIndex(index)
             insertElement(newElement, atIndex: index)
         }
     }
@@ -125,6 +126,14 @@ public struct OrderedDictionary<KeyType: Hashable, ValueType> {
         keysToValues[removedElement.key] = nil
         
         return removedElement
+    }
+}
+
+// MARK: - ArrayLiteralConvertible
+
+extension OrderedDictionary: ArrayLiteralConvertible {
+    public init(arrayLiteral elements: Element...) {
+        self.init(elements: elements)
     }
 }
 

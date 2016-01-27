@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D010B8EE1C589FCD0017413F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D010B8ED1C589FCD0017413F /* StringExtensions.swift */; };
 		D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */; };
 		D08084C71C4F6F1F00F010BA /* NumberTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08084C61C4F6F1F00F010BA /* NumberTextFieldDelegate.swift */; };
 		D08B4A3A1C4CBD33007715AA /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B4A391C4CBD33007715AA /* OrderedDictionary.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D010B8ED1C589FCD0017413F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		D02F4DC01C44D8D000D328F5 /* SwiftHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02F4DC51C44D8D000D328F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeZoneExtensions.swift; sourceTree = "<group>"; };
@@ -96,8 +98,9 @@
 				D0C34A481C50C0D5008F9F83 /* CommonFunctions.swift */,
 				D0CFA3E31C47870F00237E09 /* IntExtentions.swift */,
 				D0CFA3E41C47870F00237E09 /* NSDateExtensions.swift */,
-				D0CFA3E51C47870F00237E09 /* UIColorExtensions.swift */,
 				D059BAE51C4B0CAE001E7836 /* NSTimeZoneExtensions.swift */,
+				D010B8ED1C589FCD0017413F /* StringExtensions.swift */,
+				D0CFA3E51C47870F00237E09 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D010B8EE1C589FCD0017413F /* StringExtensions.swift in Sources */,
 				D0CFA3E81C47870F00237E09 /* UIColorExtensions.swift in Sources */,
 				D059BAE61C4B0CAE001E7836 /* NSTimeZoneExtensions.swift in Sources */,
 				D0C34A491C50C0D5008F9F83 /* CommonFunctions.swift in Sources */,

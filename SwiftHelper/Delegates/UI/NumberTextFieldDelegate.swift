@@ -47,11 +47,29 @@ public extension NumberTextFieldRelayedDelegate {
 
 public class NumberTextFieldDelegate: NSObject, UITextFieldDelegate {
     
+    public var prefix: String?
+    public var suffix: String?
+    
+    public var maxValue: Double?
+    public var maxNumOfIntegerDigits: Int?
+    public var maxNumOfDecimalDigits: Int?
+    
+    
     public weak var relayedDelegate: NumberTextFieldRelayedDelegate?
     
-    public init(relayedDelegate: NumberTextFieldRelayedDelegate? = nil) {
-        self.relayedDelegate = relayedDelegate
+    // MARK: - Initializations
+    
+    public init(maxNumOfIntegerDigits: Int = 1, maxNumOfDecimalDigits: Int = 0) {
+        self.maxNumOfIntegerDigits = maxNumOfIntegerDigits
+        self.maxNumOfDecimalDigits = maxNumOfDecimalDigits
     }
+    
+    public init(prefix: String?, suffix: String?) {
+        self.prefix = prefix
+        self.suffix = suffix
+    }
+    
+    // MARK: - UITextFieldDelegate
 
     public func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         return relayedDelegate?.textFieldShouldBeginEditing(textField) ?? true
@@ -62,6 +80,15 @@ public class NumberTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let currentString = textField.text ?? ""
+        let newString = (currentString as NSString).stringByReplacingCharactersInRange(range, withString: string)
+
+        // Get number from newString.
+        
+        guard validateInputString("") else { return false }
+
+        relayedDelegate?.textField(textField, didEndEditingWithNumber: nil)
+        
         return true
     }
     
@@ -79,5 +106,11 @@ public class NumberTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     public func textFieldDidEndEditing(textField: UITextField) {
         relayedDelegate?.textField(textField, didEndEditingWithNumber: nil)
+    }
+    
+    // MARK: - Private
+    
+    private func validateInputString(input: String) -> Bool {
+        return true
     }
 }

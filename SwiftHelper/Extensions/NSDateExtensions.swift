@@ -8,15 +8,6 @@
 
 import Foundation
 
-// MARK: - Private
-
-private extension NSDate {
-    
-    var defaultCalendar: NSCalendar {
-        return NSCalendar.currentCalendar()
-    }
-}
-
 // MARK: - Public
 
 public extension NSDate {
@@ -46,6 +37,7 @@ public extension NSDate {
     }
 }
 
+// MARK: - Comparable
 
 extension NSDate: Comparable {}
 
@@ -57,3 +49,12 @@ public func <(lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs.compare(rhs) == .OrderedAscending
 }
 
+
+// MARK: - Private
+
+private extension NSDate {
+    
+    var defaultCalendar: NSCalendar {
+        return NSCalendar.currentCalendar()
+    }
+}

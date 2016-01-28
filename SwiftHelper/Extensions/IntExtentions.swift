@@ -12,7 +12,7 @@ public extension Int {
     
     var isEven: Bool     { return self % 2 == 0 }
     
-    var isOdd: Bool      { return !self.isEven }
+    var isOdd: Bool      { return !isEven }
     
     var numOfDigits: Int { return String(abs(self)).characters.count }
     

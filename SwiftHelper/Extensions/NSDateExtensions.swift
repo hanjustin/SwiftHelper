@@ -19,11 +19,11 @@ public extension NSDate {
     }
     
     func isToday(timezone: NSTimeZone = .localTimeZone()) -> Bool {
-        return self.midnight(timezone) == NSDate().midnight(timezone)
+        return midnight(timezone) == NSDate().midnight(timezone)
     }
     
     func yesterdayMidnight(timezone: NSTimeZone = .localTimeZone()) -> NSDate {
-        return self.midnight(timezone).dateByAddingTimeInterval(-60 * 60 * 24)
+        return midnight(timezone).dateByAddingTimeInterval(-60 * 60 * 24)
     }
     
     func dateComponent(calendarUnit: NSCalendarUnit, timezone: NSTimeZone = .localTimeZone()) -> Int {
@@ -33,7 +33,7 @@ public extension NSDate {
     }
     
     func numberOfdaysSince(date: NSDate, timezone: NSTimeZone = .localTimeZone()) -> Int {
-        return self.dateComponent(.Day, timezone: timezone) - date.dateComponent(.Day, timezone: timezone)
+        return dateComponent(.Day, timezone: timezone) - date.dateComponent(.Day, timezone: timezone)
     }
 }
 

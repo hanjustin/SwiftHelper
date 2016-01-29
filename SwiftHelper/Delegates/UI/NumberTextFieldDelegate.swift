@@ -58,17 +58,12 @@ public class NumberTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let oldInput = textField.text ?? ""
-        let newInput = (oldInput as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        let oldText = textField.text ?? ""
+        let newText = (oldText as NSString).stringByReplacingCharactersInRange(range, withString: string)
         
-        guard !newInput.isEmpty else { currentValidNumber = nil; return true }
+        guard !newText.isEmpty else { currentValidNumber = nil; return true }
         
-        guard let newNumber = NSNumberFormatter().numberFromString(newInput) as? Double
-            where checkEnteredNumIsValid(newNumber) else { return false }
-
-        currentValidNumber = newNumber
-
-        return true
+        return isEnteredTextValidNum(newText)
     }
     
     public func textFieldShouldClear(textField: UITextField) -> Bool {
@@ -98,15 +93,20 @@ public class NumberTextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.text = didEndEditing ? (prefix ?? "") + numberString + (suffix ?? "") : numberString
     }
     
-    private func checkEnteredNumIsValid(input: Double) -> Bool {
-        guard maxNumOfIntegerDigits != nil && maxNumOfDecimalDigits != nil else { return true }
+    private func isEnteredTextValidNum(input: String) -> Bool {
+        guard let newNumber = NSNumberFormatter().numberFromString(input) as? Double else { return false }
         
-        let integerPart = Int(input)
-        let numOfIntegerDigits = integerPart.numOfDigits
-        let numOfDecimalDigits = Double(integerPart) == input ? 0 : String(input).characters.count - 1 - numOfIntegerDigits
+        let decimalMark = NSNumberFormatter().decimalSeparator
+        let components = input.componentsSeparatedByString(decimalMark)
+        let numOfIntegerDigits = components.count > 0 ? components[0].length : 0
+        let numOfDecimalDigits = components.count > 1 ? components[1].length : 0
         
-        if let maxNumOfIntegerDigits = maxNumOfIntegerDigits where numOfIntegerDigits > maxNumOfIntegerDigits { return false }
-        if let maxNumOfDecimalDigits = maxNumOfDecimalDigits where numOfDecimalDigits > maxNumOfDecimalDigits { return false }
+        if numOfIntegerDigits > maxNumOfIntegerDigits || numOfDecimalDigits > maxNumOfDecimalDigits { return false }
+        
+        // Disable decimal mark for whole number
+        if maxNumOfDecimalDigits == 0 && input.containsString(decimalMark) { return false }
+        
+        currentValidNumber = newNumber
         
         return true
     }

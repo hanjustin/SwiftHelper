@@ -10,6 +10,8 @@ import Foundation
 
 public extension String {
     
+    var length: Int { return characters.count }
+    
     mutating func removeCharacters(fromIndex startIndex: Int, toIndex endIndex: Int) {
         let subStringRange = Range(start: self.startIndex.advancedBy(startIndex), end: self.startIndex.advancedBy(endIndex))
         self.removeRange(subStringRange)

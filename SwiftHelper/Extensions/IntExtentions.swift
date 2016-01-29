@@ -14,7 +14,7 @@ public extension Int {
     
     var isOdd: Bool      { return !isEven }
     
-    var numOfDigits: Int { return String(abs(self)).characters.count }
+    var numOfDigits: Int { return String(abs(self)).length }
     
     static func randomNum(min min: Int, max: Int) -> Int {
         guard max > min else { return min }
